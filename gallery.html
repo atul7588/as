@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html> 
+<head>
+	<title>Prasad Gym</title>
+  <link rel="icon" type="image/x-icon" href="favicon.png">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+
+	<link href="https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap" rel="stylesheet">
+
+  <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" integrity="sha256-46qynGAkLSFpVbEBog43gvNhfrOj+BmwXdxFgVK/Kvc=" crossorigin="anonymous" />
+
+
+  <link rel="stylesheet" type="text/css" href="css/gallery.css">
+
+ 
+
+</head>
+
+<body>
+	
+  <nav class="navbar navbar-expand-lg bg-dark navbar-dark sticky-top">
+
+    <a class="navbar-brand" href="#" style="margin-right:70px; margin-left: 20px"><img src="logo.png" width="100px;" height="50px;"></a>
+
+    <!-- Toggler/collapsibe Button -->
+
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+      <span class="navbar-toggler-icon"></span>
+      </button>
+
+    <!---links--->
+
+    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+
+    <ul class="navbar-nav" style="text-align: center;">
+
+      <li class="nav-item">
+        <a class="nav-link" href="index.html"><i class="fa fa-home" style="color:#fff;margin-right: 5px;" aria-hidden="true"></i>Home</a>   
+      </li>
+
+
+      <li class="nav-item">
+        <a class="nav-link" href="#"><i class="fa fa-picture-o" style="color:#fff;margin-right: 5px;" aria-hidden="true"></i>Gallery</a>  
+      </li>
+
+
+        <!-- Dropdown  services-->
+
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown"><i class="fa fa-cogs" aria-hidden="true" style="color:#fff;margin-right: 5px;"></i>Services</a>
+
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="#">Cardio Services</a>
+          <a class="dropdown-item" href="#">Weight Training</a>
+          <a class="dropdown-item" href="#">Personal Training</a>
+        </div>
+         </li>
+
+
+        <li class="nav-item">
+        <a class="nav-link" href="#">Premium</a>  
+      </li>
+
+
+        <!-- Dropdown About Us -->
+
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown"><i class="fa fa-info-circle" style="color:#fff;margin-right: 5px;" aria-hidden="true"></i>About Us</a>
+
+            <div class="dropdown-menu">
+              <a class="dropdown-item " href="#">Link 1</a>
+          <a class="dropdown-item" href="#">Link 2</a>
+          <a class="dropdown-item" href="#">Link 3</a>
+        </div>
+         </li>
+
+
+        <li class="nav-item">
+        <a class="nav-link" href="#" style="margin-right: 10px;"><i class="fa fa-phone" aria-hidden="true" style="color:#fff;margin-right: 5px;"></i>Contact</a>  
+      </li>
+
+
+
+      <li class="nav-item">
+      <div class="social" style="display:inline-flex;">
+       <a class="nav-link" href="https://Facebook.com"><i class="fab fa-facebook fa-lg" aria-hidden="true" ></i></a>
+
+            <a class="nav-link" href="https://Twitter.com"><i class="fab fa-twitter fa-lg" aria-hidden="true" style="margin-left:10px;"></i></a>
+
+            <a class="nav-link" href="https://instagram.com"><i class="fab fa-instagram fa-lg" aria-hidden="true" style="margin-left:10px;"></i></a>
+      </div>
+      </li>
+
+  
+    </ul>
+
+  
+
+    <ul class="navbar-nav" style="margin-left:auto ;">
+      
+      <button class="btn btn-info btn-md" data-toggle="modal" data-target="#login"><i class="fa fa-key" aria-hidden="true" style="margin-right:5px"></i>Login</button> <br>
+
+      <button class="btn btn-danger btn-md" data-toggle="modal" data-target="#register" style="margin-left:10px;"><i class="fa fa-user-plus" aria-hidden="true" style="margin-right:5px"></i>SignUp</button>
+      
+    </ul>
+    </div>
+
+
+  </nav>
+
+ <!---------Login Modal ----------------------------->
+
+  <div class="container">
+    <div id="login" class="modal fade" role="dialog" >
+      <div class="modal-dialog" >
+
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header" style="background:#f2f2f2;">
+             <h3 class="modal-title" >Admin Login</h3>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+          
+            
+          </div>
+
+          <div class="modal-body" style="background:#f2f2f2;">
+
+          <form onsubmit="return validateForm()" method="POST">
+             <label for="psw"><b>Mobile Number</b></label><br>
+               <span id='mobilerror' style='color:red;font-weight:bold;' class='text-danger'></span>
+              <div class="input-group " style="margin-bottom: 15px;">
+             <input type="number" class="form-control news-input" placeholder="Your Mobile number" name='mobile' id='mobile' required> 
+              </div>
+
+               <label for="psw"><b>Password</b></label>
+              <div class="input-group " style="margin-bottom: 15px;">
+
+              <input type="Password" class="form-control news-input" id="myInput" placeholder="Enter Your Password" name="pass" id='pass' required>     
+              </div>
+
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" onclick="showPass()">
+                <label class="form-check-label" for="defaultCheck1">Show Password
+                </label>
+                </div>
+          
+              <button type="submit" class="btn btn-success btn-md" style="margin: 10px;">Login</button> <br>
+              <a href="#" style="margin-bottom:5px;">Create New Account</a> <br>
+              <a href="#">Forgotten Password?</a> 
+        </form>
+        </div>
+
+        <div class="modal-footer" style="background:#3b5998">
+          <button type="button" class="btn btn-info" btn-md data-dismiss="modal">Close</button>
+
+        </div>
+      </div>
+
+    </div>
+    </div>
+  </div>
+
+<!------------End login model-------------->
+
+
+<!----------- start Sign up medel--------->
+
+
+  <div class="container">
+    <div id="register" class="modal fade" role="dialog" >
+      <div class="modal-dialog" >
+
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header" style="background:#f2f2f2;">
+             <h3 class="modal-title" >Registration Form</h3>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+          
+            
+          </div>
+
+          <div class="modal-body" style="background:#f2f2f2;">
+
+          <form onsubmit="return validateregForm()" method="POST">
+
+               <label for="psw"><b>Your Name</b></label><br>
+                <span id='namerror' style='color:red;font-weight:bold;' class='text-danger'></span>
+              <div class="input-group " style="margin-bottom: 15px;">
+             <input type="text" class="form-control news-input" placeholder="Enter your Name" name='name' id='name' required> 
+              </div>
+
+             <label for="psw"><b>Mobile Number</b></label><br>
+               <span id='regmobilerror' style='color:red;font-weight:bold;' class='text-danger'></span>
+              <div class="input-group " style="margin-bottom: 15px;">
+             <input type="number" class="form-control news-input" placeholder="Your Mobile number" name='mobile' id='regmobile' required> 
+              </div>
+
+               <label for="psw"><b>Password</b></label><br>
+               <span id='regpasserror' style='color:red;font-weight:bold;' class='text-danger'></span>
+              <div class="input-group " style="margin-bottom: 15px;">
+              <input type="Password" class="form-control news-input" placeholder=" Password (8-20 characters)" name="pass" id='regPass' required>     
+              </div>
+
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" onclick="showregPass()">
+                <label class="form-check-label" for="defaultCheck1">Show Password
+                </label>
+                </div>
+          
+              <button type="submit" class="btn btn-success btn-md" style="margin: 10px;">SignUp</button> <br>
+              <a href="#" style="margin-bottom:5px;">Already Registered?</a> <br>
+              <a href="#">Forgotten Password?</a> 
+        </form>
+        </div>
+
+        <div class="modal-footer" style="background:#3b5998">
+          <button type="button" class="btn btn-info" btn-md data-dismiss="modal">Close</button>
+
+        </div>
+      </div>
+
+    </div>
+    </div>
+  </div>
+
+<!-------End signup model-----------------------> 
+
+
+
+
+
+<!-------banner start--------------->
+
+<section class="bannerphotp">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        
+      </div>
+    </div>
+  </div>
+  
+</section>
+
+
+
+
+<section class="bannertop">
+  <div class="container">
+
+ <div class="row ">
+      <div class="col-lg-12">
+        <h5>GALLERY</h5>
+      
+      
+        </div>   
+    </div>
+
+</section>
+
+<!------banner ends-------------------------->
+
+
+<section class="gallery">
+    <div class="container">
+  <div class="row">
+    <div class="col-md-4">
+      <div class="thumbnail">
+          <img src="gallery/rock.jpg" alt="Lights" style="height:200px; width:100%;">
+          <div class="caption">
+            <p>Modern Design</p>
+          </div>
+        </div>
+    </div>
+
+       <div class="col-md-4">
+      <div class="thumbnail">
+        
+          <img src="gallery/rock.jpg" alt="" style="height:200px; width:100%;">
+          <div class="caption">
+            <p></p>
+          </div>
+        
+      </div>
+    </div>
+
+     <div class="col-md-4">
+      <div class="thumbnail">
+        
+          <img src="gallery/rock.jpg" alt="steel" style="height:200px; width:100%;">
+          <div class="caption">
+            <p></p>
+          </div>
+        
+      </div>
+    </div>
+
+
+   <div class="col-md-4">
+      <div class="thumbnail">
+          <img src="gallery/rock.jpg" alt="Lights" style="height:200px; width:100%;">
+          <div class="caption">
+            <p>Modern Design</p>
+          </div>
+        </div>
+    </div>
+
+       <div class="col-md-4">
+      <div class="thumbnail">
+        
+          <img src="gallery/rock.jpg" alt="" style="height:200px; width:100%;">
+          <div class="caption">
+            <p></p>
+          </div>
+        
+      </div>
+    </div>
+
+     <div class="col-md-4">
+      <div class="thumbnail">
+        
+          <img src="gallery/rock.jpg" alt="steel" style="height:200px; width:100%;">
+          <div class="caption">
+            <p></p>
+          </div>
+        
+      </div>
+    </div>
+<div class="col-md-4">
+      <div class="thumbnail">
+          <img src="gallery/rock.jpg" alt="Lights" style="height:200px; width:100%;">
+          <div class="caption">
+            <p>Modern Design</p>
+          </div>
+        </div>
+    </div>
+
+       <div class="col-md-4">
+      <div class="thumbnail">
+        
+          <img src="gallery/rock.jpg" alt="" style="height:200px; width:100%;">
+          <div class="caption">
+            <p></p>
+          </div>
+        
+      </div>
+    </div>
+
+     <div class="col-md-4">
+      <div class="thumbnail">
+        
+          <img src="gallery/rock.jpg" alt="steel" style="height:200px; width:100%;">
+          <div class="caption">
+            <p></p>
+          </div>
+        
+      </div>
+    </div>
+
+   
+    </div>
+  </div>
+
+</section>
+
+
+
+
+
+
+
+
+
+
+
+<!---footer start------>
+
+<section class="footer bg-dark">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-3 col-md-4 col-12">
+        <h3><i class="fa fa-handshake-o" aria-hidden="true" style="margin-right:5px"></i>PRASAD GYM</h3>
+        <hr>
+        <p>Cross Fit Studio- ‘The best gym in Patna” doesn’t only focus on your physical health, we believe in your Overall Personality Development which includes your Mental Fitness, Disease free body, Stress Relief, Confidence Boost Up etc.</p>
+      </div>
+
+
+      <div class="col-lg-3 col-md-4 col-12">
+        <h3><i class="fa fa-hand-o-right" aria-hidden="true" style="margin-right:5px"></i>USEFULL LINKS</h3>
+        <hr>
+        <a href="#"><i class="fa fa-home" style="color:#fff;margin-right: 5px;" aria-hidden="true"></i>HOME</a><br>
+        <a href="#"><i class="fa fa-cogs" aria-hidden="true" style="color:#fff;margin-right: 5px;"></i>SERVICES</a><br>
+
+        <a href="#"><i class="fa fa-phone" style="color:#fff;margin-right: 5px;" aria-hidden="true"></i>CONTACT US</a><br>
+        <a href="#"><i class="fa fa-picture-o" style="color:#fff;margin-right: 5px;" aria-hidden="true"></i>GALLERY</a>
+      </div>
+
+
+      <div class="col-lg-3 col-md-4 col-12">
+        <h3><i class="fa fa-map-marker" aria-hidden="true" style="margin-right:5px;"></i>ADDRESS</h3>
+        <hr>
+        <address>
+          Prasad Gym Club, Lalan Complex, Chhapra Road, Siwan, Bihar-841241 . <br><br>
+          
+          <h5 style="color:lightgray;">CONTACT NUMBER</h5>
+          <h6><i class="fa fa-mobile" aria-hidden="true" style="margin-right:5px"></i>MO- 9999999999</h6>
+        </address>
+      </div>
+
+      <div class="col-lg-3 col-md-4 col-12">
+        <h3><i class="fa fa-globe" aria-hidden="true" style="margin-right:5px"></i>FOLLOW US</h3>
+        <hr>
+        <a href="#"><i class="fab fa-facebook fa-lg" style="color:white;margin-left:5px;padding: 5px;" aria-hidden="true"></i>FACEBOOK</a><br>
+
+        <a href="#"><i class="fab fa-twitter fa-lg" style="color:white;margin-left:5px;padding: 5px;" aria-hidden="true"></i>TWITTER</a><br>
+
+        <a href="#"><i class="fab fa-instagram fa-lg" style="color:white;margin-left:5px;padding: 5px;" aria-hidden="true"></i>INSTAGRAM</a>
+        <br><br>
+
+        <h5 style="color:lightgray">MAIL US:-</h5>
+        prasadgym@gmail.com
+
+      </div>
+    </div>
+    
+  </div>
+
+  <div class="row">
+    <div class="col-lg-12">
+    <h5 style="color:white;text-align: center;background: black;">Developed by Atul kumar prasad</h5>
+  </div>
+
+     <div class="scrolltop float-right">
+     <i class="fa fa-arrow-up" onclick="topFunction()" id="myBtn">Top</i>
+    </div>
+    
+  </div>
+
+  
+</section>
+
+
+
+
+
+<!---script link--->
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js" integrity="sha256-jDnOKIOq2KNsQZTcBTEnsp76FnfMEttF6AV2DF2fFNE=" crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0.0/jquery.counterup.js" integrity="sha256-wldfwyVJyA71oKe6Sba0fKZkaR6CMwtb0DnWcQs6N1Y=" crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+
+
+<script>
+  $('.count').counterUp({
+    delay:10,
+    time:1000
+  })
+</script>
+
+
+
+
+
+
+
+
+<!-----login form check---------->
+
+
+
+
+
+<script src="js/showpasslogin.js"></script>
+<script src="js/showpassreg.js"></script>
+<script src="js/validatereg.js"></script>
+<script src="js/validatelogin.js"></script>
+<script src="js/scrollbtn.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
