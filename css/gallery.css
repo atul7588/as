@@ -1,0 +1,181 @@
+html{
+	scroll-behavior: smooth;
+}
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Poppins', sans-serif;
+
+}
+
+
+
+ p{
+
+ 	font-size: 0.9rem;
+ 	line-height: 1.6;
+ 	font-weight: 400;
+ 	color: #606060;
+ }
+
+ a:hover{ 
+ 	text-decoration: none;
+ 	 }
+
+/**********actual css start*********/
+
+.nav-item li{
+	padding: 5px;
+	text-align:justify;
+}
+
+.nav-item a{
+	color: white!important;
+	font-size: 1.1rem!important;
+	margin-left: 5px;
+}
+
+.nav-item a:hover{
+	opacity: 0.7;
+}
+
+
+
+.dropdown-menu{
+	padding-right: 10px;
+}
+
+.dropdown-menu a{
+	color: black!important;
+	text-align: center;
+}
+
+.dropdown-menu a:hover{
+	color:black!important;
+	background:lightblue;
+	min-width: 120px;
+
+}
+
+.dropdown:hover .dropdown-menu{
+	display: block;
+}
+
+
+.bannerphotp{
+width: 100%;
+	height:40vh;
+	background-image:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url('banner.jpg'); 
+	background-repeat: no-repeat;
+
+	background-size: 100% 100%;
+	position:fixed;
+
+}
+
+
+.bannertop::before {
+
+	content: '';
+	position: absolute;
+	top:0%;
+	bottom: 0%;
+	left: 0%;
+	right:0%;
+	opacity: 1;
+	z-index: -1;
+}
+
+
+
+.bannertop{
+	margin-top: 20px;
+	margin-bottom: 70px;
+}
+
+
+
+.bannertop h5{
+	font-weight: bold; 	
+	margin-bottom: 15px;
+	color: white;
+	margin-top: 90px;
+	text-align: center;
+}
+
+
+
+.gallery{
+	width: 100%;
+	height: auto;
+	position: relative;
+	background:#dfe3ee!important;
+	padding: 20px;
+
+}
+
+
+
+
+
+
+
+
+
+
+/********FOOTER START************/
+
+.footer{
+
+	text-align: left;
+	opacity: 0.9;
+	color: white;
+	padding: 10px;
+
+}
+.footer h3{
+	font-weight: 500;
+	color: lightgray;
+	margin-top: 10px;
+}
+
+.footer hr{
+	border: 1px solid white;
+}
+.footer p{
+	color: white;
+	text-align: justify;
+}
+
+.footer a{
+	color: white;
+	font-weight: bold;
+	padding: 3px;
+	margin-bottom: 5px;
+}
+
+.footer a:hover{
+	opacity: 0.7;
+}
+
+
+
+
+#myBtn{
+
+	display: none;
+	position: fixed;
+	bottom: 20px;
+	right: 30px;
+	z-index: 99;
+	border: none;
+	color: white;
+	cursor: pointer;
+	background: #4000ff;
+	padding: 10px;
+	border-radius: 10px;
+}
+
+#myBtn:hover{
+	background: #606060;
