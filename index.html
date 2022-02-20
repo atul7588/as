@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html> 
+<head>
+	<title>Prasad Gym</title>
+  <link rel="icon" type="image/x-icon" href="favicon.png">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+
+	<link href="https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap" rel="stylesheet">
+
+  <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" integrity="sha256-46qynGAkLSFpVbEBog43gvNhfrOj+BmwXdxFgVK/Kvc=" crossorigin="anonymous" />
+
+
+	<link rel="stylesheet" type="text/css" href="css/gym.css">
+
+ 
+
+</head>
+
+<body>
+	
+  <nav class="navbar navbar-expand-lg bg-dark navbar-dark sticky-top">
+
+    <a class="navbar-brand" href="#" style="margin-right:70px; margin-left: 20px"><img src="logo.png" width="100px;" height="50px;"></a>
+
+    <!-- Toggler/collapsibe Button -->
+
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+      <span class="navbar-toggler-icon"></span>
+      </button>
+
+    <!---links--->
+
+    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+
+    <ul class="navbar-nav" style="text-align: center;">
+
+      <li class="nav-item">
+        <a class="nav-link" href="index.html"><i class="fa fa-home" style="color:#fff;margin-right: 5px;" aria-hidden="true"></i>Home</a>   
+      </li>
+
+
+      <li class="nav-item">
+        <a class="nav-link" href="gallery.html"><i class="fa fa-picture-o" style="color:#fff;margin-right: 5px;" aria-hidden="true"></i>Gallery</a>  
+      </li>
+
+
+        <!-- Dropdown  services-->
+
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown"><i class="fa fa-cogs" aria-hidden="true" style="color:#fff;margin-right: 5px;"></i>Services</a>
+
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="#">Cardio Services</a>
+          <a class="dropdown-item" href="#">Weight Training</a>
+          <a class="dropdown-item" href="#">Personal Training</a>
+        </div>
+         </li>
+
+
+        <li class="nav-item">
+        <a class="nav-link" href="#">Premium</a>  
+      </li>
+
+
+        <!-- Dropdown About Us -->
+
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown"><i class="fa fa-info-circle" style="color:#fff;margin-right: 5px;" aria-hidden="true"></i>About Us</a>
+
+            <div class="dropdown-menu">
+              <a class="dropdown-item " href="#">Link 1</a>
+          <a class="dropdown-item" href="#">Link 2</a>
+          <a class="dropdown-item" href="#">Link 3</a>
+        </div>
+         </li>
+
+
+        <li class="nav-item">
+        <a class="nav-link" href="#" style="margin-right: 10px;"><i class="fa fa-phone" aria-hidden="true" style="color:#fff;margin-right: 5px;"></i>Contact</a>  
+      </li>
+
+
+
+      <li class="nav-item">
+      <div class="social" style="display:inline-flex;">
+       <a class="nav-link" href="https://Facebook.com"><i class="fab fa-facebook fa-lg" aria-hidden="true" ></i></a>
+
+            <a class="nav-link" href="https://Twitter.com"><i class="fab fa-twitter fa-lg" aria-hidden="true" style="margin-left:10px;"></i></a>
+
+            <a class="nav-link" href="https://instagram.com"><i class="fab fa-instagram fa-lg" aria-hidden="true" style="margin-left:10px;"></i></a>
+      </div>
+      </li>
+
+  
+    </ul>
+
+  
+
+    <ul class="navbar-nav" style="margin-left:auto ;">
+      
+      <button class="btn btn-info btn-md" data-toggle="modal" data-target="#login"><i class="fa fa-key" aria-hidden="true" style="margin-right:5px"></i>Login</button> <br>
+
+      <button class="btn btn-danger btn-md" data-toggle="modal" data-target="#register" style="margin-left:10px;"><i class="fa fa-user-plus" aria-hidden="true" style="margin-right:5px"></i>SignUp</button>
+      
+    </ul>
+    </div>
+
+
+  </nav>
+
+ <!---------Login Modal ----------------------------->
+
+  <div class="container">
+    <div id="login" class="modal fade" role="dialog" >
+      <div class="modal-dialog" >
+
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header" style="background:#f2f2f2;">
+             <h3 class="modal-title" >Admin Login</h3>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+          
+            
+          </div>
+
+          <div class="modal-body" style="background:#f2f2f2;">
+
+          <form onsubmit="return validateForm()" method="POST">
+             <label for="psw"><b>Mobile Number</b></label><br>
+               <span id='mobilerror' style='color:red;font-weight:bold;' class='text-danger'></span>
+              <div class="input-group " style="margin-bottom: 15px;">
+             <input type="number" class="form-control news-input" placeholder="Your Mobile number" name='mobile' id='mobile' required> 
+              </div>
+
+               <label for="psw"><b>Password</b></label>
+              <div class="input-group " style="margin-bottom: 15px;">
+
+              <input type="Password" class="form-control news-input" id="myInput" placeholder="Enter Your Password" name="pass" id='pass' required>     
+              </div>
+
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" onclick="showPass()">
+                <label class="form-check-label" for="defaultCheck1">Show Password
+                </label>
+                </div>
+          
+              <button type="submit" class="btn btn-success btn-md" style="margin: 10px;">Login</button> <br>
+              <a href="#" style="margin-bottom:5px;">Create New Account</a> <br>
+              <a href="#">Forgotten Password?</a> 
+        </form>
+        </div>
+
+        <div class="modal-footer" style="background:#3b5998">
+          <button type="button" class="btn btn-info" btn-md data-dismiss="modal">Close</button>
+
+        </div>
+      </div>
+
+    </div>
+    </div>
+  </div>
+
+<!------------End login model-------------->
+
+
+<!----------- start Sign up medel--------->
+
+
+  <div class="container">
+    <div id="register" class="modal fade" role="dialog" >
+      <div class="modal-dialog" >
+
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header" style="background:#f2f2f2;">
+             <h3 class="modal-title" >Registration Form</h3>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+          
+            
+          </div>
+
+          <div class="modal-body" style="background:#f2f2f2;">
+
+          <form onsubmit="return validateregForm()" method="POST">
+
+               <label for="psw"><b>Your Name</b></label><br>
+                <span id='namerror' style='color:red;font-weight:bold;' class='text-danger'></span>
+              <div class="input-group " style="margin-bottom: 15px;">
+             <input type="text" class="form-control news-input" placeholder="Enter your Name" name='name' id='name' required> 
+              </div>
+
+             <label for="psw"><b>Mobile Number</b></label><br>
+               <span id='regmobilerror' style='color:red;font-weight:bold;' class='text-danger'></span>
+              <div class="input-group " style="margin-bottom: 15px;">
+             <input type="number" class="form-control news-input" placeholder="Your Mobile number" name='mobile' id='regmobile' required> 
+              </div>
+
+               <label for="psw"><b>Password</b></label><br>
+               <span id='regpasserror' style='color:red;font-weight:bold;' class='text-danger'></span>
+              <div class="input-group " style="margin-bottom: 15px;">
+              <input type="Password" class="form-control news-input" placeholder=" Password (8-20 characters)" name="pass" id='regPass' required>     
+              </div>
+
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" onclick="showregPass()">
+                <label class="form-check-label" for="defaultCheck1">Show Password
+                </label>
+                </div>
+          
+              <button type="submit" class="btn btn-success btn-md" style="margin: 10px;">SignUp</button> <br>
+              <a href="#" style="margin-bottom:5px;">Already Registered?</a> <br>
+              <a href="#">Forgotten Password?</a> 
+        </form>
+        </div>
+
+        <div class="modal-footer" style="background:#3b5998">
+          <button type="button" class="btn btn-info" btn-md data-dismiss="modal">Close</button>
+
+        </div>
+      </div>
+
+    </div>
+    </div>
+  </div>
+
+<!-------End signup model-----------------------> 
+
+
+
+
+
+<!-------banner start--------------->
+
+<section class="bannerphotp">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        
+      </div>
+    </div>
+  </div>
+  
+</section>
+
+
+
+
+<section class="bannertop">
+  <div class="container">
+
+ <div class="row ">
+      <div class="col-lg-12">
+        <h1 class="text-center">WE <strong style="color:grey;">HELP</strong> YOU TO <br>IMPROVE YOUR OVERALL <strong style="color:gray;">PERSONALITY</strong> & BE THE BEST <strong style="color:gray;">VERSION OF YOURSELF</strong></h1>
+        <br>
+        <h5 class="text-center" style="color: white;"><sup><i class="fa fa-quote-left" aria-hidden="true"></i></sup> BEING FIT & HEALTHY IS THE FIRST LADDER TOWARDS IT <sub><i class="fa fa-quote-right" aria-hidden="true"></i></sub></h5>
+      
+        </div>   
+    </div>
+
+</section>
+
+<!------banner ends-------------------------->
+
+
+<section class="rock">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6 col-md-6 col-12">
+        <img src="rock.jpg" width="100%;" height="400px;">
+        </div>
+
+      
+         <div class="col-lg-6 col-md-6 col-12" style="padding-left: 20px;">
+          <br>
+          <h2>BUILD YOUR BODY <strong style="color:gray">STRONG </strong></h2>
+          <hr style="border: 2px solid gray; width:50%;margin-top: 2px!important;">
+
+          <br>
+            <h5 style="font-size: 600; color: black;"><sup><i class="fa fa-quote-left" aria-hidden="true"></i></sup> The <strong style="color:red">Pain</strong> you feel today will be the <strong style="color:red">Strength</strong> you feel tomorrow <sub><i class="fa fa-quote-right" aria-hidden="true"></i></sub></h5>
+            <br>
+
+          <p style="text-align:justify;">Prasad Gym club- ‘The best gym in siwan” doesn’t only focus on your physical health, we believe in your Overall Personality Development which includes your Mental Fitness, Disease free body, Stress Relief, Confidence Boost Up etc.<br><br> Our Motto is to make everyone understand that gym is not just for Weight Loss & Weight Gain, It’s the necessity to be fit.</p>
+          
+        
+         
+         </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+<!-----service start------>
+
+<section class="service">
+  <h2 class="text-center"><strong style="color:white;">OUR</strong> <strong style="color:gray;">SERVICES</strong></h2>
+  
+    <div class="container">
+      <div class="row">
+
+        <div class="col-lg-3 col-md-4 col-sm-12">
+          <div class="card">
+            <a href=""><img src="img/dieting.jpg" alt="John">
+              <h5>DIETING PLANNING</h5></a>    
+          </div>
+        </div>
+
+         <div class="col-lg-3 col-md-4 col-sm-12">
+          <div class="card">
+            <a href=""><img src="img/functional.jpg" alt="John">
+              <h5>FUNCTIONAL TRAINING</h5></a>    
+          </div>
+        </div>
+
+
+        <div class="col-lg-3 col-md-4 col-sm-12">
+          <div class="card">
+            <a href=""><img src="img/muscle.jpg" alt="John">
+              <h5>MUSCLE BUILDING</h5></a>    
+          </div>
+        </div>
+
+         <div class="col-lg-3 col-md-4 col-sm-12">
+          <div class="card">
+            <a href=""><img src="img/weight1.jpg" alt="John">
+              <h5>WEIGHT LOSS/GAIN</h5></a>    
+          </div>
+        </div>
+
+
+        <div class="col-lg-3 col-md-4 col-sm-12">
+          <div class="card">
+            <a href=""><img src="img/pain.jpg" alt="John">
+              <h5>PAIN RELIEF WORKOUT</h5></a>    
+          </div>
+        </div>
+
+         <div class="col-lg-3 col-md-4 col-sm-12">
+          <div class="card">
+            <a href=""><img src="img/aerobic.jpg" alt="John">
+              <h5>AEROBICS TRAINING</h5></a>    
+          </div>
+        </div>
+
+
+        <div class="col-lg-3 col-md-4 col-sm-12">
+          <div class="card">
+            <a href=""><img src="img/poweryoga.jpg" alt="John">
+              <h5>POWER YOGA</h5></a>    
+          </div>
+        </div>
+
+         <div class="col-lg-3 col-md-4 col-sm-12">
+          <div class="card">
+            <a href=""><img src="img/crossfit.jpg" alt="John">
+              <h5>CROSSFIT TRAINING</h5></a>    
+          </div>
+        </div>
+        
+      </div>
+  </div>
+</section>
+
+<!--End service----->
+
+
+
+<!------about start----->
+
+<section class="yogaclass">
+  <div class="container">
+    <h2 style="text-align:center; margin-top: 10px;">POWER <strong style="color:gray">YOGA CLASSES</strong></h2>
+    <hr style="border: 1px solid gray;margin: auto;width: 200px;margin-bottom: 30px;">
+    <div class="row">
+      <div class="col-lg-6 col-md-6 col-12">
+
+        <br>
+        <h4>Yoga Practice For <strong style="color:gray">Good Health</strong>,
+        
+          Make It a <strong style="color:gray">Lifestyle</strong> Not a Duty</h4> <br>
+
+           <h5 style="text-align:justify"><sup><i class="fa fa-quote-left" aria-hidden="true"></i></sup> Most<strong style="color:red"> people fail</strong>, not because of lack of desire, but because of <strong style="color:red">lack of commitment </strong> <sub><i class="fa fa-quote-right" aria-hidden="true"></i></sub></h5>  
+           <br>
+        <p style="text-align:justify">"focus on your physical health, we believe in your Overall Personality Development which includes your Mental Fitness, Disease free body, Stress Relief, Confidence Boost Up etc"</p> 
+
+           
+      </div>
+
+        <div class="col-lg-6 col-md-6 col-12">
+        <img src="yoga2.png" height="320px" width="100%">       
+      </div>
+   
+   </div> 
+  </div>
+</section>
+
+<!---ends about------------>
+
+
+<!-----know about us--------->
+
+<section class="knowaboutus">
+  <div class="container">
+
+    <h2>KNOW <strong style="color:gray">ABOUT US</strong></h2>
+    <div class="row">
+
+
+       <div class="col-lg-3 col-md-4 col-sm-6">
+          <div class="card">
+            <i class="fa fa-users fa-4x" style="color:gray;" aria-hidden="true"></i>
+              <h1 class="count">1200</h1>
+              <h5>HAPPY CLIENTS</h5>  
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-4 col-sm-6">
+          <div class="card">
+            <i class="fa fa-user fa-4x" style="color:gray;" aria-hidden="true"></i>
+              <h1 class="count">10</h1>
+              <h5>TRAINERS</h5>  
+          </div>
+        </div>
+
+         <div class="col-lg-3 col-md-4 col-sm-6">
+          <div class="card">
+            <i class="fa fa-hospital fa-4x" style="color:gray;" aria-hidden="true"></i>
+              <h1 class="count">5</h1>
+              <h5>BRANCHES</h5>  
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-4 col-sm-6">
+          <div class="card">
+            <i class="fa fa-check fa-4x" style="color:gray;" aria-hidden="true"></i>
+              <h1 class="count">4000</h1>
+              <h5>RESULTS</h5>  
+          </div>
+        </div>
+      
+    </div>
+    
+  </div>
+</section>
+
+
+
+
+
+
+<section class="aboutprasad">
+  <div class="container">
+      <h2>ABOUT <strong style="color:gray;">PRASAD GYM</strong></h2>
+      <hr>
+      <p style="text-align:justify;">
+        Prasad Gym Studio enrolled into Mission Fit India Programme and is awarded as the Best Gym in Siwan. We’re a Community, it’s a base for improving overall Personality & to be healthy with a motive of Disease Free Nation. We believe that a body only achieves what the mind believes, So We focus on shredding down your Fat & gaining Lean Muscles along with Improving your Mental Strength, Lifestyle & Confidence. We’re a Brand "Cross Fit Studio" - Best unisex Gym in Siwan, Bihar. Our Motto is to make everyone understand that gym is not just for Weight Loss & Weight Gain, It’s the necessity to be fit. <br>
+        <br>
+
+We run on the Result Oriented Process with different levels for beginners, intermediate & Advance levels with Proper Evaluation through Body composition Test on the consistent basis. Diet Chart is made on the basis of your personal goal & Present body Condition with Dietician’s Consultancy. The Training is designed through Certified Trainers in a healthy way according to your goals. Join the Fitness Revolution!. We are the best gym in Patna offering services like body transformation, functions training, muscle building, weight loss/gain, cross fit training, aerobics training, power yoga, pain relief workout and other fitness programs
+      </p>
+      
+  </div>
+</section>
+
+<!------Our plan start--------------->
+
+<section class="ourplan">
+  <div class="container">
+
+    <h2 style="color:white;">FITNESS PLAN</h2>
+    <div class="row">
+
+
+       <div class="col-lg-4 col-md-6 col-sm-6">
+          <div class="card">
+         
+              <h3>YEARLY</h3>
+              <hr>
+              <h5>FREEZING POLICY</h5> 
+              <p>You are allowed to freeze your account for 45 days during a year with prior Info.</p> 
+              <hr>
+
+              <h5>BODY TRANSFORMATION</h5>
+              <p>Body transformation Through Special Training Programme by Our Certified Cross Fit trainers for beginners.</p>
+              <hr>
+
+              <h5>PERSONAL TRAINING</h5>
+              <p>No extra cost will be taken apart from the package Amount in the name of Trainers or Dietician</p>
+              
+
+               <div class="quote">
+                <a href=""><button class="btn btn-danger btn-md">GET QUOTE</button></a>
+              </div>
+          </div>
+        </div>
+
+
+         <div class="col-lg-4 col-md-6 col-sm-6">
+          <div class="card">
+           
+              <h3> HALF YEARLY</h3>
+              <hr>
+              <h5>FREEZING POLICY</h5> 
+              <p>You are allowed to freeze your account for 15 days during a year with prior Information.</p> 
+              <hr>
+
+              <h5>EXTENSION</h5>
+              <p>Extend Your Package into Yearly within 30 days from your admission to avail all the benefits of Yearly Package.</p>
+              <hr>
+
+              <h5>PERSONAL TRAINING</h5>
+              <p>No extra cost will be taken apart from the package Amount in the name of Trainers or Dietician</p>
+              
+              <div class="quote">
+                <a href=""><button class="btn btn-danger btn-md">GET QUOTE</button></a>
+              </div>
+          </div>
+        </div>
+
+         <div class="col-lg-4 col-md-6 col-sm-6">
+          <div class="card">
+              <h3>QUARTERLY</h3>
+              <hr>
+              <h5>FREEZING POLICY</h5> 
+              <p>You are allowed to freeze your account for 7 days during a year with prior Information.</p> 
+              <hr>
+
+               <h5>EXTENSION</h5>
+              <p>Extend Your Package into Yearly within 15 days from your admission to avail all the benefits of Yearly Package.</p>
+              <hr>
+
+              <h5>PERSONAL TRAINING</h5>
+              <p>No extra cost will be taken apart from the package Amount in the name of Trainers or Dietician</p>
+              
+
+               <div class="quote">
+                <a href=""><button class="btn btn-danger btn-md">GET QUOTE</button></a>
+              </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+</section>
+
+<!-------fitness plan ends------------>
+
+
+
+<!------discount start-->
+
+<section class="discount">
+  <div class="container">
+    <h3>FITNESS CLASSES THIS SUMMER</h3>
+   <strong style="color:gray"><h3> <i class="fa fa-money " style="color:gray;" aria-hidden="true"></i> PAY NOW AND</h3>
+    <h3>GET <strong style="color:red;">30%</strong> DISCOUNT</h3></strong>  
+    </div>
+  </div>
+</section>
+<!------Discount end------------>
+
+
+<!------our team------->
+
+<section class="team">
+    <div class="container">
+	
+	
+  <h2 class="text-center font-weight-bold" style="color:white;">OUR <strong style="color:gray"> EXPERT TRAINERS</strong></h2>
+	
+      <div class="row">
+        <div class="col-lg-3 col-md-4 col-sm-12">
+          <div class="card">
+            <img src="img/team1.jpg">
+              <h4> Mr. Atul Kumar</h4>
+                <p class="title"> Muscle Trainer</p>
+                    
+          </div>
+
+        </div>
+
+
+        <div class="col-lg-3 col-md-4 col-sm-12">
+          <div class="card">
+            <img src="img/team2.jpg">
+              <h4>Sumona Deo</h4>
+                <p class="title">Yoga Specilist</p>
+                    
+          </div>
+
+        </div>
+
+         <div class="col-lg-3 col-md-4 col-sm-12">
+          <div class="card">
+            <img src="img/team3.jpg">
+              <h4> Mr. Mukesh Singh</h4>
+                <p class="title">Crossfit Trainer</p>
+                    
+          </div>
+
+        </div>
+
+        <div class="col-lg-3 col-md-4 col-sm-12">
+          <div class="card">
+            <img src="img/team4.jpg">
+              <h4>Jasmin Andrew</h4>
+                <p class="title">Aerobic Trainer</p>
+                    
+          </div>
+
+        </div>
+        
+      </div>
+  </div>
+</section>
+
+<!---------team end-------->
+
+<section class="timing">
+  <div class="container">
+
+    <div class="row">
+     
+      <div class="col-lg-6 col-md-6 col-12">
+            <h3 style="text-align: center;">SIGNUP NEWSLETTER</h3>
+			<p>Subscribe our news letter</p>
+
+         <form>
+          <div class="input-group ">
+             <input type="text" class="form-control news-input" placeholder="Your  Your Name">
+          </div>
+
+           <div class="input-group ">
+              <input type="email" class="form-control news-input" placeholder="Your Your Email">
+            
+            
+          </div>
+          
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+            
+          </div>
+     
+
+
+      
+      <div class="col-lg-6 col-md-6 col-12">
+        <h3 style="text-align:center; ">OPENING TIME</h3>
+        <div style="text-align: center; margin-top: 20px;">
+          <h6 style="text-align:left;margin-bottom: 15px;">We work 7 days a week, every day excluding major holiday.
+          Contact us for more details.</h6>
+        <p>Monday-Friday: 10AM - 8PM</p>
+        <p>Saturday: 11AM - 8PM</p>
+        <p>Sunday: 8AM - 10PM</p>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+  
+</section>
+
+
+
+
+
+<!---footer start------>
+
+<section class="footer bg-dark">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-3 col-md-4 col-12">
+        <h3><i class="fa fa-handshake-o" aria-hidden="true" style="margin-right:5px"></i>PRASAD GYM</h3>
+        <hr>
+        <p>Cross Fit Studio- ‘The best gym in Patna” doesn’t only focus on your physical health, we believe in your Overall Personality Development which includes your Mental Fitness, Disease free body, Stress Relief, Confidence Boost Up etc.</p>
+      </div>
+
+
+      <div class="col-lg-3 col-md-4 col-12">
+        <h3><i class="fa fa-hand-o-right" aria-hidden="true" style="margin-right:5px"></i>USEFULL LINKS</h3>
+        <hr>
+        <a href="#"><i class="fa fa-home" style="color:#fff;margin-right: 5px;" aria-hidden="true"></i>HOME</a><br>
+        <a href="#"><i class="fa fa-cogs" aria-hidden="true" style="color:#fff;margin-right: 5px;"></i>SERVICES</a><br>
+
+        <a href="#"><i class="fa fa-phone" style="color:#fff;margin-right: 5px;" aria-hidden="true"></i>CONTACT US</a><br>
+        <a href="#"><i class="fa fa-picture-o" style="color:#fff;margin-right: 5px;" aria-hidden="true"></i>GALLERY</a>
+      </div>
+
+
+      <div class="col-lg-3 col-md-4 col-12">
+        <h3><i class="fa fa-map-marker" aria-hidden="true" style="margin-right:5px;"></i>ADDRESS</h3>
+        <hr>
+        <address>
+          Prasad Gym Club, Lalan Complex, Chhapra Road, Siwan, Bihar-841241 . <br><br>
+          
+          <h5 style="color:lightgray;">CONTACT NUMBER</h5>
+          <h6><i class="fa fa-mobile" aria-hidden="true" style="margin-right:5px"></i>MO- 9999999999</h6>
+        </address>
+      </div>
+
+      <div class="col-lg-3 col-md-4 col-12">
+        <h3><i class="fa fa-globe" aria-hidden="true" style="margin-right:5px"></i>FOLLOW US</h3>
+        <hr>
+        <a href="#"><i class="fab fa-facebook fa-lg" style="color:white;margin-left:5px;padding: 5px;" aria-hidden="true"></i>FACEBOOK</a><br>
+
+        <a href="#"><i class="fab fa-twitter fa-lg" style="color:white;margin-left:5px;padding: 5px;" aria-hidden="true"></i>TWITTER</a><br>
+
+        <a href="#"><i class="fab fa-instagram fa-lg" style="color:white;margin-left:5px;padding: 5px;" aria-hidden="true"></i>INSTAGRAM</a>
+        <br><br>
+
+        <h5 style="color:lightgray">MAIL US:-</h5>
+        prasadgym@gmail.com
+
+      </div>
+    </div>
+    
+  </div>
+
+  <div class="row">
+    <div class="col-lg-12">
+    <h5 style="color:white;text-align: center;background: black;">Developed by Atul kumar prasad</h5>
+  </div>
+
+     <div class="scrolltop float-right">
+     <i class="fa fa-arrow-up" onclick="topFunction()" id="myBtn">Top</i>
+    </div>
+    
+  </div>
+
+  
+</section>
+
+
+
+
+
+<!---script link--->
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js" integrity="sha256-jDnOKIOq2KNsQZTcBTEnsp76FnfMEttF6AV2DF2fFNE=" crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0.0/jquery.counterup.js" integrity="sha256-wldfwyVJyA71oKe6Sba0fKZkaR6CMwtb0DnWcQs6N1Y=" crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+
+
+<script>
+  $('.count').counterUp({
+    delay:10,
+    time:1000
+  })
+</script>
+
+
+
+
+
+
+
+
+<!-----login form check---------->
+
+
+
+
+
+<script src="js/showpasslogin.js"></script>
+<script src="js/showpassreg.js"></script>
+<script src="js/validatereg.js"></script>
+<script src="js/validatelogin.js"></script>
+<script src="js/scrollbtn.js"></script>
+</body>
+</html>
